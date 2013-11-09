@@ -1,0 +1,32 @@
+<html>
+<head><meta name="Generator" content="sedsed --htmlize">
+<title>Colorized comment-replace.sed</title></head>
+<body bgcolor="#000000" text="#ffffff"
+      link="#ff00ff" alink="#ff00ff" vlink="#ff00ff">
+<pre>
+<font color="#00ffff"><b>#! /bin/sed -nf</b></font>
+<font color="#00ffff"><b># filename : comment-replace.sed</b></font>
+<font color="#00ffff"><b># author : Yerik Ng</b></font>
+<font color="#00ffff"><b># date : &lt;2013-10-22 20:21:09&gt;</b></font>
+<font color="#00ffff"><b># desc : In this script, I've used a general idea to locate the target line</b></font>
+<font color="#00ffff"><b># in a plain text where the substitution is done.  The idea is that, in order</b></font>
+<font color="#00ffff"><b># to locate *point-of-interest* in plain text, we shall come across a stage by</b></font>
+<font color="#00ffff"><b># stage process.  For example, if we try to locate something in a comment in</b></font>
+<font color="#00ffff"><b># a source file.  The first stage would be identifying the comment, and then</b></font>
+<font color="#00ffff"><b># the second stage would be locating the target place in *the* comment.  Of</b></font>
+<font color="#00ffff"><b># cource, the comment could be replaced with any construct in the text.  Here</b></font>
+<font color="#00ffff"><b># I demostrate the use of sed to replace some string in the comment of C like</b></font>
+<font color="#00ffff"><b># source files.</b></font>
+<font color="#ff6060"><b>/</b></font><font color="#8080ff"><b>\/\*</b></font><font color="#ff6060"><b>/</b></font> <font color="#ff6060"><b>{</b></font>
+    <font color="#ff00ff"><b>:</b></font><font color="#ff00ff"><b><a name="loop">loop</a></b></font>
+    <font color="#ff6060"><b>/</b></font><font color="#8080ff"><b>\*\/</b></font><font color="#ff6060"><b>/</b></font> <font color="#ff6060"><b>!</b></font><font color="#ff6060"><b>{</b></font>
+        <font color="#ffff00"><b>N</b></font>
+        <font color="#ffff00"><b>b</b></font> <a href="#loop">loop</a>
+    <font color="#ff6060"><b>}</b></font>
+    <font color="#ffff00"><b>s</b></font><font color="#ff6060"><b>/</b></font><font color="#8080ff"><b>COPYING</b></font><font color="#ff6060"><b>/</b></font>!!!!!!!<font color="#ff6060"><b>/</b></font>
+<font color="#ff6060"><b>}</b></font>  
+<font color="#ffff00"><b>p</b></font>  
+
+<font color="#00ffff"><b>### colorized by <a href="http://sedsed.sf.net">sedsed</a>, a SED script debugger/indenter/tokenizer/HTMLizer</b></font>
+
+</pre></body></html>
