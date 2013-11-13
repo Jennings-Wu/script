@@ -7,4 +7,4 @@ find . -name '*.java' | xargs chmod u+w;
 find . -name "*.java" | sed -n 's/\.\/[[:alnum:]]\+\/F\([[:alnum:]_@]\+\)\.java/map\.put(\"\1\", F\1\.class)\;/g;p'
 
 # auto-generate java imports
-$ find . -name "*.java" | sed -n 's/\.\/\([[:alnum:]]\+\)\/F\([[:alnum:]_@]\+\)\.java/import com\.moran\.cep\.core\.executor\.expression\.function\.\1\.F\2\;/g;p'
+$ find . -name "*.java" | sed -n 's/\.\/\([[:alnum:]]\+\)\/F\([[:alnum:]_@]\+\)\.java/import function\.\1\.F\2\;/g;p'
